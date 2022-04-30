@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import logo from './assets/images/shib-logo.svg';
+import logo from './assets/images/Logo _Tall_ White.svg';
 import swapLogo from './assets/images/swap-ico.svg';
 import hero_img from './assets/images/hero-shib.png'
 import hero_moon from './assets/images/moon.svg';
@@ -10,20 +10,27 @@ import relife_fund from './assets/images/relife_fund.png';
 import relife_img from './assets/images/relife.png';
 import burn_img from './assets/images/burn.svg';
 import burn_trans from './assets/images/burn_trans.svg';
-import lang_icon from './assets/images/lang-ico.svg';
 import menu_icon from './assets/images/menu_icon.svg';
 import shiba_coin_1 from './assets/images/shiba_coin-1.png';
 import cartoon from './assets/images/cartoon.png';
 import circle_dash from './assets/images/circle-dashes.svg';
 import ico_graph_ora from './assets/images/ico-graph-ora.svg';
-import coin_elip from './assets/images/coin-elip.png';
 import circle_img_1 from './assets/images/circle_img1.png';
 import swap_card from './assets/images/swap_card.png'
 import icon_discover from './assets/images/ico-dis.svg'
-import icon_reddit from  './assets/images/ico-red.svg'
-import icon_twitter from  './assets/images/ico-tw.svg'
-import icon_instagram from  './assets/images/instagram.svg'
-import icon_telegram from  './assets/images/ico-tel.svg'
+import icon_reddit from './assets/images/ico-red.svg'
+import icon_twitter from './assets/images/ico-tw.svg'
+import icon_instagram from './assets/images/instagram.svg'
+import icon_telegram from './assets/images/ico-tel.svg'
+import meat_1 from './assets/images/meat-1.svg'
+import meat_2 from './assets/images/meat-2.svg'
+import meat_3 from './assets/images/meat-3.svg'
+import circle_1 from './assets/images/circle_img1.png'
+import circle_2 from './assets/images/circle_img2.png'
+import blur_img3 from './assets/images/circle_img3.png'
+import blur_img from './assets/images/blur_img.png'
+import blur_img2 from './assets/images/blur_2.png'
+import circle_3 from './assets/images/circle_3.png'
 
 
 
@@ -31,55 +38,109 @@ function App() {
   const [uniswap, setUniswap] = useState(false);
   const [relife, setRelife] = useState(false);
   const [burn, setBurn] = useState(false);
-  const [menu, setMenu] = useState(false);
-  const [langMenu, setLangMenu] = useState(false);
+  const [isCompany, setIsCompany] = useState(false);
+  const [isEcosys, setIsEcosys] = useState(false);
+  const [isBuy, setIsBuy] = useState(false);
+  const [isBoard, setIsBoard] = useState(false);
+  const [isCharty, setIsCharty] = useState(false);
+  const [isTurChat, setIsTruChat] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [langMenu, setLangMenu] = useState(false);
   return (
     <div className="main_token_container">
       <div className='inner_container'>
         <nav>
           <a href='#' className='brand_logo'>
             <img src={logo} />
-            <span>SHIBA TOKEN</span>
           </a>
           <div className={isOpen ? ' close_btn' : "nav_bars"} onClick={() => setIsOpen(!isOpen)}>
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <ul className={isOpen ? 'mobile_navLink' : "navlinks"}>
-            <li><a href='#'>Ecosystem</a></li>
-            <li><a href="#">Buy</a></li>
-            <li className='menu_link nav_more_menu'>
-              <a href='#' onClick={() => setMenu(!menu)}>More<img src={menu_icon} className='menu_icon' />
-                <ol className={menu ? 'show_menu ' : ' hidden_menu'}>
-                  <img src={lang_icon} />
-                  <a href='#'>Art</a>
-                  <a href='#'>Rescue</a>
-                  <a href='#'>Community</a>
+          <ul className={isOpen ? 'toggle_link' : 'navlinks'}>
+          <a href='#' className='toggle_logo'>
+            <img src={logo} />
+          </a>
+            <li>
+              <a href='#'>TrustedToken</a>
+            </li>
+            <li>
+              <a href="#" onClick={() => setIsCompany(!isCompany)}>Company
+                <img src={menu_icon} className='menu_icon' />
+                <ol className={isCompany ? 'comp_menu ' : ' hidden_menu'}>
+                 
+                  <a href='#'>About</a>
+                  <a href='#'>Team</a>
+                  <a href='#'>Files</a>
+                  <a href='#'>Tokenomics</a>
+                  <a href='#'>Roadmaps</a>
+                  <a href='#'>Marketplace</a>
                 </ol>
               </a>
             </li>
-            <li className='nav_lang_menu'>
-              <a href='#' onClick={() => setLangMenu(!langMenu)}>EN<img src={menu_icon} className='menu_icon' />
-                <ol className={langMenu ? 'show_lang_menu ' : ' hidden_menu'}>
-                  <img src={lang_icon} />
-                  <a href='#'>Spanish</a>
-                  <a href='#'>German</a>
-                  <a href='#'>Italian</a>
-                  <a href='#'>Hebrew</a>
-                  <a href='#'>Russian</a>
-                  <a href='#'>Romanian</a>
-                  <a href='#'>Vietnamese</a>
-                  <a href='#'>Chinese</a>
+            <li >
+              <a href='#' onClick={() => setIsEcosys(!isEcosys)}>Ecosystem
+                <img src={menu_icon} className='menu_icon' />
+                <ol className={isEcosys ? 'eco_menu ' : ' hidden_menu'}>
+                  
+                  <a href='#'>Trusted Token</a>
+                  <a href='#'>Trusted-NFT</a>
+                  <a href='#'>TrustVerse</a>
+                  <a href='#'>Projects development/funding</a>
+                  <a href='#'>TrustedToken Card</a>
+                </ol>
+              </a>
+            </li>
+            <li>
+              <a href='#' onClick={() => setIsBuy(!isBuy)}>BUY
+                <img src={menu_icon} className='menu_icon' />
+                <ol className={isBuy ? 'buy_menu ' : ' hidden_menu'}>
+                 
+                  <a href='#'>Steps and video on how to buy using metamask on uniswap</a>
+                  <a href='#'>Steps and video on how to buy using trust wall on uniswap</a>
                 </ol></a>
             </li>
-            <a href='#' className='animation_btn'>
-              <img src={swapLogo} />
-              <span>Use ShibaSwap</span>
-            </a>
+            <li>
+              <a href='#' onClick={() => setIsBoard(!isBoard)}>DASHBOARD
+                <img src={menu_icon} className='menu_icon' />
+                <ol className={isBoard ? 'dash_menu ' : ' hidden_menu'}>
+                 
+                  <a href='#'>Diluted market cap</a>
+                  <a href='#'>Undiluted market cap</a>
+                  <a href='#'>% of total token burn(it should be real time values)</a>
+                  <a href='#'>Transaction of the burning activities with hash number</a>
+                  <a href='#'>Token price graph with real time value</a>
+                  <a href='#'>Wallet connect for holders to connect their wallet and claim rewards</a>
+                </ol></a>
+            </li>
+            <li>
+              <a href='#' onClick={() => setIsCharty(!isCharty)}>Global Charity<img src={menu_icon} className='menu_icon' />
+                <ol className={isCharty ? 'charty_menu ' : ' hidden_menu'}>
+                  
+                  <a href='#'>Charity events</a>
+                  <a href='#'>Videos of charity projects and donations made</a>
+                </ol></a>
+            </li>
+            <li>
+              <a href='#' onClick={() => setIsTruChat(!isTurChat)}>TRUCHAT
+                <img src={menu_icon} className='menu_icon' />
+                <ol className={isTurChat ? 'tru_menu ' : ' hidden_menu'}>
+                  
+                  <a href='#'>Peer-to-peer transactions</a>
+                  <a href='#'>Chats</a>
+                  <a href='#'>Voice calls</a>
+                  <a href='#'>Video calls</a>
+                  <a href='#'>Dex Wallet</a>
+                  <a href='#'>Group Chats</a>
+                  <a href='#'>Group Video Chats</a>
+                  <a href='#'>Channel Creations with links to share</a>
+                </ol></a>
+            </li>
+
           </ul>
         </nav>
+
         <div className='token_hero_section'>
           <div className='hero_text'>
             <h1>A Decentralized Meme Token that Evolved into a Vibrant Ecosystem</h1>
@@ -139,7 +200,6 @@ function App() {
                 <div>
                   <img src={shiba_coin_1} />
                 </div>
-                <img src={coin_elip} className='blur_bg' />
               </div>
               <div className='coin_box'>
                 <div className='coin_title'>
@@ -163,7 +223,6 @@ function App() {
                 <div>
                   <img src={shiba_coin_1} />
                 </div>
-                <img src={coin_elip} className='blur_bg' />
               </div>
               <div className='coin_box'>
                 <div className='coin_title'>
@@ -186,7 +245,6 @@ function App() {
                 <div>
                   <img src={shiba_coin_1} />
                 </div>
-                <img src={coin_elip} className='blur_bg' />
 
               </div>
               <div className='coin_box'>
@@ -213,7 +271,7 @@ function App() {
           <div className='how_to_buy_title'>
             <h1>How to Buy</h1>
             <p>SHIB and LEASH are best purchased and sold through <strong>ShibaSwap</strong>, but can also be found on Uniswap and an ever-growing list of CEXs. Please note that, outside of ShibaSwap, exchanges which support one may not support the other.</p>
-            <br/>
+            <br />
             <p>SHIB is a decentralized experiment and, as such, we always incentivize the use of DEXs. If you choose to utilize a CEX instead, remember to research it first to ensure it is both safe and secure.</p>
             <br />
             <div>
@@ -222,13 +280,17 @@ function App() {
               <a href='#' className='special_btn'>Buy BONE</a>
             </div>
           </div>
-          <div className='rotation_container'>
-            <img src={cartoon} className='cartoon_img' />
-            <img src={circle_dash} className='circle_img' />
-            <div>
-              {/* <img src={circle_img_1}/> */}
+          <div class="wrapper">
+            <div class="cartoon" ></div>
+            <div class="inner">
+                <img src={circle_1}  class="circle_1"/>
+                <img src={circle_2}  class="circle_2"/>
+                <img src={circle_3}  class="circle_3"/>
+                <img src={blur_img}  class="blur_1"/>
+                <img src={blur_img2}  class="blur_2"/>
+                <img src={blur_img3}  class="blur_3"/>
             </div>
-          </div>
+        </div>
         </div>
 
         <div className=' quick_start'>
@@ -257,8 +319,8 @@ function App() {
               </div>
               <div className='quick_text'>
                 <h3>
-                  
-Send ETH to your wallet</h3>
+
+                  Send ETH to your wallet</h3>
                 <p>You can buy Ethereum (ETH) directly on MetaMask or transfer it to your MetaMask Wallet from exchanges like Coinbase, Binance, etc. Make sure to use the ERC-20 network when transfering ETH.</p>
               </div>
             </div>
@@ -271,8 +333,8 @@ Send ETH to your wallet</h3>
               </div>
               <div className='quick_text'>
                 <h3>
-                  
-Connect your wallet to ShibaSwap</h3>
+
+                  Connect your wallet to ShibaSwap</h3>
                 <p>Access your wallet to ShibaSwap by clicking ‘Connect to a wallet’ and selecting MetaMask.</p>
               </div>
             </div>
@@ -285,8 +347,8 @@ Connect your wallet to ShibaSwap</h3>
               </div>
               <div className='quick_text'>
                 <h3>
-                  
-Swap ETH for SHIB, LEASH or BONE</h3>
+
+                  Swap ETH for SHIB, LEASH or BONE</h3>
                 <p>You can start swapping as soon as you have ETH available! Press ‘Select a token’ and enter the token address or search for it on the tokens list.</p>
               </div>
             </div>
@@ -338,10 +400,13 @@ Swap ETH for SHIB, LEASH or BONE</h3>
             <p>Luckily, we are helping these dogs in real life! We use <span>Amazon Smile</span> to collect and donate a percentage of your Amazon purchases to the<span> Shiba Inu Rescue Association</span>. Joining is easy and free! Just use</p>
             <p><span>
               <a href='#'>smile.amazon.com</a>
-              </span> when placing orders and select Shiba Inu Rescue Association (a 501(c)3, preferred non-profit organization). You’re seconds away from helping Shibs in need. Start funding shelters today.</p>
+            </span> when placing orders and select Shiba Inu Rescue Association (a 501(c)3, preferred non-profit organization). You’re seconds away from helping Shibs in need. Start funding shelters today.</p>
           </div>
           <div className='rescue_img'>
             <a href='#'>Rescue Me</a>
+            <img src={meat_1} className='resimg_1'/>
+            <img src={meat_2} className='resimg_2'/>
+            <img src={meat_3} className='resimg_3'/>
           </div>
         </div>
 
@@ -352,52 +417,52 @@ Swap ETH for SHIB, LEASH or BONE</h3>
           <p>If you'd like to donate to the <strong>Devs</strong>, send <span>ETH</span>, <span>SHIB</span>, <span>LEASH</span> or <span>BONE</span> here. Thank you for your support! WOOF!
           </p>
           <div className='community_box'>
-           <div className='comm_text'>
-           <div>0xc351155C80aCD043BD</div>
-            <div className='comm_blur_text'>5F8FE7ffc8536af1fF9375</div>
-           </div>
+            <div className='comm_text'>
+              <div>0xc351155C80aCD043BD</div>
+              <div className='comm_blur_text'>5F8FE7ffc8536af1fF9375</div>
+            </div>
             <a href='#' className='animation_btn'>
-                <img src={swapLogo} />
-                <span>Use ShibaSwap</span>
-              </a>
+              <img src={swapLogo} />
+              <span>Use ShibaSwap</span>
+            </a>
           </div>
         </div>
         <div className='footer_section'>
           <div>
-            <p>Our community grows stronger every day. Please follow our social platforms to get the most up-to-date,<br/> accurate SHIB information.</p>
-            <br/>
+            <p>Our community grows stronger every day. Please follow our social platforms to get the most up-to-date,<br /> accurate SHIB information.</p>
+            <br />
             <div className='footer_icons'>
               <a href='#'>
-                <img src={icon_telegram}/>
+                <img src={icon_telegram} />
                 <p>Shiba Ecosystem Telegram</p>
               </a>
               <a href='#'>
-                <img src={icon_twitter}/>
+                <img src={icon_twitter} />
                 <p>
-Twitter</p>
+                  Twitter</p>
               </a>
               <a href='#'>
-              <img src={icon_reddit}/>
+                <img src={icon_reddit} />
                 <p>Reddit</p>
               </a>
               <a href='#'>
-              <img src={icon_discover}/>
+                <img src={icon_discover} />
                 <p>Discord</p>
               </a>
               <a href='#'>
-              <img src={icon_instagram}/>
+                <img src={icon_instagram} />
                 <p>Instagram</p>
               </a>
             </div>
           </div>
-          </div>
-          <div className='copyright'>
-            <a href='#'>Medium</a>
-            <a href='#'>Etherscan</a>
-            <a href='#'>CoinMarketCap</a>
-            <a href='#'>CoinGecko</a>
-          </div>
-        
+        </div>
+        <div className='copyright'>
+          <a href='#'>Medium</a>
+          <a href='#'>Etherscan</a>
+          <a href='#'>CoinMarketCap</a>
+          <a href='#'>CoinGecko</a>
+        </div>
+
       </div>
     </div>
   );
