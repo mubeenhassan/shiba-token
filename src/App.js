@@ -39,12 +39,6 @@ function App() {
   const [uniswap, setUniswap] = useState(false);
   const [relife, setRelife] = useState(false);
   const [burn, setBurn] = useState(false);
-  const [isCompany, setIsCompany] = useState(false);
-  const [isEcosys, setIsEcosys] = useState(false);
-  const [isBuy, setIsBuy] = useState(false);
-  const [isBoard, setIsBoard] = useState(false);
-  const [isCharty, setIsCharty] = useState(false);
-  const [isTurChat, setIsTruChat] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
   const [backtoTop, setbacktoTop] = useState(false)
@@ -64,12 +58,11 @@ function App() {
       behavior: "smooth"
     })
   }
-
-
   
   return (
     <div className="main_token_container">
       <div className='inner_container'>
+        <div className="header">
         <nav>
           <a href='#' className='brand_logo'>
             <img src={logo} />
@@ -79,17 +72,18 @@ function App() {
             <span></span>
             <span></span>
           </div>
-          <ul className={isOpen ? 'toggle_link' : 'navlinks'}>
-            <a href='#' className='toggle_logo'>
-              <img src={logo} />
-            </a>
+          <ul className={`navlinks ${isOpen && "toggle_link"}`}>
+          <a href='#' className='brand_logo mobile-logo'>
+            <img src={logo} />
+          </a>
             <li>
               <a href='#'>TrustedToken</a>
             </li>
             <li>
-              <a href="#" onMouseEnter={() => setIsCompany(!isCompany)} onMouseLeave={()=> setIsCompany(!isCompany)}>Company
+              <a href="#">Company
                 <img src={menu_icon} className='menu_icon' />
-                <ol className={isCompany ? 'comp_menu ' : ' hidden_menu'}>
+                </a>
+                <ol className='dropdown_menu'>
 
                   <a href='#'>About</a>
                   <a href='#'>Team</a>
@@ -98,12 +92,13 @@ function App() {
                   <a href='#'>Roadmaps</a>
                   <a href='#'>Marketplace</a>
                 </ol>
-              </a>
+              
             </li>
             <li >
-              <a href='#' onMouseEnter={() => setIsEcosys(!isEcosys)} onMouseLeave={()=> setIsEcosys(!isEcosys)}>Ecosystem
+              <a href='#'>Ecosystem
                 <img src={menu_icon} className='menu_icon' />
-                <ol className={isEcosys ? 'eco_menu ' : ' hidden_menu'}>
+                </a>
+                <ol className='dropdown_menu'>
 
                   <a href='#'>Trusted Token</a>
                   <a href='#'>Trusted-NFT</a>
@@ -111,21 +106,23 @@ function App() {
                   <a href='#'>Projects development/funding</a>
                   <a href='#'>TrustedToken Card</a>
                 </ol>
-              </a>
+             
             </li>
             <li>
-              <a href='#' onMouseEnter={() => setIsBuy(!isBuy)} onMouseLeave={()=> setIsBuy(!isBuy)}>BUY
+              <a href='#'>BUY
                 <img src={menu_icon} className='menu_icon' />
-                <ol className={isBuy ? 'buy_menu ' : ' hidden_menu'}>
+                </a>
+                <ol className='dropdown_menu'>
 
                   <a href='#'>Steps and video on how to buy using metamask on uniswap</a>
                   <a href='#'>Steps and video on how to buy using trust wall on uniswap</a>
-                </ol></a>
+                </ol>
             </li>
             <li>
-              <a href='#' onMouseEnter={() => setIsBoard(!isBoard)} onMouseLeave={()=> setIsBoard(!isBoard)}>DASHBOARD
+              <a href='#'>DASHBOARD
                 <img src={menu_icon} className='menu_icon' />
-                <ol className={isBoard ? 'dash_menu ' : ' hidden_menu'}>
+                </a>
+                <ol className='dropdown_menu'>
 
                   <a href='#'>Diluted market cap</a>
                   <a href='#'>Undiluted market cap</a>
@@ -133,20 +130,22 @@ function App() {
                   <a href='#'>Transaction of the burning activities with hash number</a>
                   <a href='#'>Token price graph with real time value</a>
                   <a href='#'>Wallet connect for holders to connect their wallet and claim rewards</a>
-                </ol></a>
+                </ol>
             </li>
             <li>
-              <a href='#' onMouseEnter={() => setIsCharty(!isCharty)} onMouseLeave={()=> setIsCharty(!isCharty)}>Global Charity<img src={menu_icon} className='menu_icon' />
-                <ol className={isCharty ? 'charty_menu ' : ' hidden_menu'}>
+              <a href='#'>Global Charity<img src={menu_icon} className='menu_icon' />
+              </a>
+                <ol className='dropdown_menu'>
 
                   <a href='#'>Charity events</a>
                   <a href='#'>Videos of charity projects and donations made</a>
-                </ol></a>
+                </ol>
             </li>
             <li>
-              <a href='#' onMouseEnter={() => setIsTruChat(!isTurChat)} onMouseLeave={()=> setIsTruChat(!isTurChat)}>TRUCHAT
+              <a href='#'>TRUCHAT
                 <img src={menu_icon} className='menu_icon' />
-                <ol className={isTurChat ? 'tru_menu ' : ' hidden_menu'}>
+                </a>
+                <ol className='dropdown_menu'>
                   <a href='#'>Peer-to-peer transactions</a>
                   <a href='#'>Chats</a>
                   <a href='#'>Voice calls</a>
@@ -155,11 +154,13 @@ function App() {
                   <a href='#'>Group Chats</a>
                   <a href='#'>Group Video Chats</a>
                   <a href='#'>Channel Creations with links to share</a>
-                </ol></a>
+                </ol>
+                
             </li>
 
           </ul>
         </nav>
+        </div>
 
         <div className='token_hero_section'>
           <div className='hero_text'>
