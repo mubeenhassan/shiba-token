@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import logo from './assets/images/Logo _Tall_ White.svg';
 import swapLogo from './assets/images/swap-ico.svg';
@@ -31,6 +31,7 @@ import blur_img3 from './assets/images/circle_img3.png'
 import blur_img from './assets/images/blur_img.png'
 import blur_img2 from './assets/images/blur_2.png'
 import circle_3 from './assets/images/circle_3.png'
+import ico_arrow_up from './assets/images/ico-arrow-up.svg'
 
 
 
@@ -45,7 +46,27 @@ function App() {
   const [isCharty, setIsCharty] = useState(false);
   const [isTurChat, setIsTruChat] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [langMenu, setLangMenu] = useState(false);
+
+  const [backtoTop, setbacktoTop] = useState(false)
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        setbacktoTop(true)
+      } else {
+        setbacktoTop(false)
+      }
+    })
+  }, [])
+
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
+
+
+  
   return (
     <div className="main_token_container">
       <div className='inner_container'>
@@ -59,17 +80,17 @@ function App() {
             <span></span>
           </div>
           <ul className={isOpen ? 'toggle_link' : 'navlinks'}>
-          <a href='#' className='toggle_logo'>
-            <img src={logo} />
-          </a>
+            <a href='#' className='toggle_logo'>
+              <img src={logo} />
+            </a>
             <li>
               <a href='#'>TrustedToken</a>
             </li>
             <li>
-              <a href="#" onClick={() => setIsCompany(!isCompany)}>Company
+              <a href="#" onMouseEnter={() => setIsCompany(!isCompany)} onMouseLeave={()=> setIsCompany(!isCompany)}>Company
                 <img src={menu_icon} className='menu_icon' />
                 <ol className={isCompany ? 'comp_menu ' : ' hidden_menu'}>
-                 
+
                   <a href='#'>About</a>
                   <a href='#'>Team</a>
                   <a href='#'>Files</a>
@@ -80,10 +101,10 @@ function App() {
               </a>
             </li>
             <li >
-              <a href='#' onClick={() => setIsEcosys(!isEcosys)}>Ecosystem
+              <a href='#' onMouseEnter={() => setIsEcosys(!isEcosys)} onMouseLeave={()=> setIsEcosys(!isEcosys)}>Ecosystem
                 <img src={menu_icon} className='menu_icon' />
                 <ol className={isEcosys ? 'eco_menu ' : ' hidden_menu'}>
-                  
+
                   <a href='#'>Trusted Token</a>
                   <a href='#'>Trusted-NFT</a>
                   <a href='#'>TrustVerse</a>
@@ -93,19 +114,19 @@ function App() {
               </a>
             </li>
             <li>
-              <a href='#' onClick={() => setIsBuy(!isBuy)}>BUY
+              <a href='#' onMouseEnter={() => setIsBuy(!isBuy)} onMouseLeave={()=> setIsBuy(!isBuy)}>BUY
                 <img src={menu_icon} className='menu_icon' />
                 <ol className={isBuy ? 'buy_menu ' : ' hidden_menu'}>
-                 
+
                   <a href='#'>Steps and video on how to buy using metamask on uniswap</a>
                   <a href='#'>Steps and video on how to buy using trust wall on uniswap</a>
                 </ol></a>
             </li>
             <li>
-              <a href='#' onClick={() => setIsBoard(!isBoard)}>DASHBOARD
+              <a href='#' onMouseEnter={() => setIsBoard(!isBoard)} onMouseLeave={()=> setIsBoard(!isBoard)}>DASHBOARD
                 <img src={menu_icon} className='menu_icon' />
                 <ol className={isBoard ? 'dash_menu ' : ' hidden_menu'}>
-                 
+
                   <a href='#'>Diluted market cap</a>
                   <a href='#'>Undiluted market cap</a>
                   <a href='#'>% of total token burn(it should be real time values)</a>
@@ -115,18 +136,17 @@ function App() {
                 </ol></a>
             </li>
             <li>
-              <a href='#' onClick={() => setIsCharty(!isCharty)}>Global Charity<img src={menu_icon} className='menu_icon' />
+              <a href='#' onMouseEnter={() => setIsCharty(!isCharty)} onMouseLeave={()=> setIsCharty(!isCharty)}>Global Charity<img src={menu_icon} className='menu_icon' />
                 <ol className={isCharty ? 'charty_menu ' : ' hidden_menu'}>
-                  
+
                   <a href='#'>Charity events</a>
                   <a href='#'>Videos of charity projects and donations made</a>
                 </ol></a>
             </li>
             <li>
-              <a href='#' onClick={() => setIsTruChat(!isTurChat)}>TRUCHAT
+              <a href='#' onMouseEnter={() => setIsTruChat(!isTurChat)} onMouseLeave={()=> setIsTruChat(!isTurChat)}>TRUCHAT
                 <img src={menu_icon} className='menu_icon' />
                 <ol className={isTurChat ? 'tru_menu ' : ' hidden_menu'}>
-                  
                   <a href='#'>Peer-to-peer transactions</a>
                   <a href='#'>Chats</a>
                   <a href='#'>Voice calls</a>
@@ -237,7 +257,7 @@ function App() {
                 <br />
                 <p>LEASH is the second token incentivized on ShibaSwap and will offer lucrative rewards for the holders providing its liquidity.</p>
                 <br />
-                <a href='#' className='special_btn'>Buy SHIB</a>
+                <a href='#' className='special_btn'>Buy LEASH</a>
               </div>
             </div>
             <div className='coin_card'>
@@ -260,12 +280,11 @@ function App() {
                 <br />
                 <p>Moreover, the token is a Governance token which will allow the #ShibArmy to vote on upcoming proposals on our <span>Doggy DAO</span>.</p>
                 <br />
-                <a href='#' className='special_btn'>Buy SHIB</a>
+                <a href='#' className='special_btn'>Buy BONE</a>
               </div>
             </div>
           </div>
         </div>
-
 
         <div className='how_to_buy_section'>
           <div className='how_to_buy_title'>
@@ -280,17 +299,18 @@ function App() {
               <a href='#' className='special_btn'>Buy BONE</a>
             </div>
           </div>
-          <div class="wrapper">
-            <div class="cartoon" ></div>
-            <div class="inner">
-                <img src={circle_1}  class="circle_1"/>
-                <img src={circle_2}  class="circle_2"/>
-                <img src={circle_3}  class="circle_3"/>
-                <img src={blur_img}  class="blur_1"/>
-                <img src={blur_img2}  class="blur_2"/>
-                <img src={blur_img3}  class="blur_3"/>
+          <div className="cartoon" ></div>
+          {/* <div className="wrapper">
+            
+            <div className="inner">
+              <img src={circle_1} className="circle_1" />
+              <img src={circle_2} className="circle_2" />
+              <img src={circle_3} className="circle_3" />
+              <img src={blur_img} className="blur_1" />
+              <img src={blur_img2} className="blur_2" />
+              <img src={blur_img3} className="blur_3" />
             </div>
-        </div>
+          </div> */}
         </div>
 
         <div className=' quick_start'>
@@ -392,6 +412,13 @@ function App() {
             <h1>Art</h1>
             <p>We are proud to support ingenuity in all its forms with the <span>Shiba Inu Incubator</span>. The ShibArmy is made up of talented individuals who have united to build something remarkable, and we support this by cultivating an environment which encourages creativity and growth. Through the power of the Shiba Inu Incubator, we help holders find the tools they need to bring their inspiration and unique perspectives to life. This as just another way to encourage others to step outside of preconceived limits and regulations and experience what it means to be part of our decentralized movement.</p>
           </div>
+          {/* <div className='art_slide'>
+             <div className='art_img1'></div>
+             <div className='art_img2'></div>
+             <div className='art_img3'></div>
+             <div className='art_img4'></div>
+             <div className='art_img5'></div>
+          </div> */}
         </div>
         <div className='rescue_section'>
           <div className='rescue_text'>
@@ -404,9 +431,10 @@ function App() {
           </div>
           <div className='rescue_img'>
             <a href='#'>Rescue Me</a>
-            <img src={meat_1} className='resimg_1'/>
-            <img src={meat_2} className='resimg_2'/>
-            <img src={meat_3} className='resimg_3'/>
+            <span href='#'></span>
+            <img src={meat_1} className='resimg_1' />
+            <img src={meat_2} className='resimg_2' />
+            <img src={meat_3} className='resimg_3' />
           </div>
         </div>
 
@@ -456,13 +484,18 @@ function App() {
             </div>
           </div>
         </div>
+        {
+          backtoTop &&
+            <button href='#'  onClick={scrollTop} className='scroll_up'>
+              <img src={ico_arrow_up} />
+            </button>
+        }
         <div className='copyright'>
           <a href='#'>Medium</a>
           <a href='#'>Etherscan</a>
           <a href='#'>CoinMarketCap</a>
           <a href='#'>CoinGecko</a>
         </div>
-
       </div>
     </div>
   );
