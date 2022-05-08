@@ -377,9 +377,12 @@ a {
 }
 .how_to_buy_section {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   margin: 3rem auto;
+  padding: 2rem;
+  position: relative;
+
 }
 .how_to_buy_title {
   display: flex;
@@ -717,91 +720,38 @@ a {
 }
 .cartoon {
   width: 50%;
-  max-width: 250px;
-  height: 250px;
-  left: 32%;
-  top: 18%;
-  background: url(./assets/images/cartoon.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-/* .art_slide{
+.art_slide{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 2rem 0px;
 }
-.art_img1{
+.slick-slide img {
   width: 100%;
-  max-width: 250px;
-  height: 250px;
-  background: url(./assets/images/art1.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 16px 8px;
-  cursor: pointer;
+  height: 400px;
 }
-.art_img2{
+ .wrapper {
   width: 100%;
-  max-width: 250px;
-  height: 250px;
-  background: url(./assets/images/art2.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 16px 8px;
-  cursor: pointer;
-}
-.art_img3{
-  width: 100%;
-  max-width: 250px;
-  height: 250px;
-  background: url(./assets/images/art12.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 16px 8px;
-  cursor: pointer;
-}
-.art_img4{
-  width: 100%;
-  max-width: 250px;
-  height: 250px;
-  background: url(./assets/images/art10.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 16px 8px;
-  cursor: pointer;
-}
-.art_img5{
-  width: 250px;
-  height: 250px;
-  background: url(./assets/images/art5.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 16px 8px;
-  cursor: pointer;
-} */
-/* .wrapper {
-  width: 100%;
-  max-width: 250px;
-  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .inner {
   background: url(./assets/images/circle-dashes.svg);
   background-position: center;
   background-size: cover;
   width: 100%;
-  max-width: 500px;
-  height: 500px;
+  max-width: 330px;
+  height: 330px;
   background-repeat: no-repeat;
   animation: snipt 30s linear infinite;
 }
@@ -819,13 +769,18 @@ a {
 }
 .circle_2 {
   position: absolute;
-  bottom: 0%;
-  left: 65%;
+  bottom: 32%;
+  left: 86%;
 }
 .circle_3 {
   position: absolute;
   bottom: 0%;
-  left: 65%;
+  left: 13%;
+}
+.blur_1,
+.blur_2,
+.blur_3 {
+  width: 40px;
 }
 .blur_1 {
   position: absolute;
@@ -835,20 +790,23 @@ a {
 .blur_2 {
   position: absolute;
   top: 34%;
-  left: -18%;
+  left: -6%;
 }
 .blur_3 {
   position: absolute;
-  bottom: 10%;
-  left: 65%;
+  bottom: -3%;
+  left: 63%;
 }
 .logo_5 {
   width: 12%;
   position: absolute;
   top: 0%;
   left: 73%;
-} */
-/* @keyframes logo_1 {
+} 
+.cartoon-img {
+  width: 200px;
+}
+ @keyframes logo_1 {
   100% {
       transform: rotate(360deg);
   }
@@ -860,7 +818,7 @@ a {
   100% {
       transform: rotate(360deg);
   }
-} */
+}
 .scroll_up {
   position: fixed;
   left: auto;
@@ -884,6 +842,20 @@ a {
 .scroll_up img {
   width: 25px;
 }
+.slider {
+  width: 100%;
+}
+.slick-next:before, .slick-prev:before {
+  font-size: 3rem;
+}
+.slick-next {
+  right: 5%;
+}
+.slick-prev {
+  left: 5%;
+  z-index: 1;
+}
+
 @media only screen and (min-width: 1115px) {
   .navlinks {
     width: 940px;
@@ -1163,6 +1135,7 @@ a {
     box-sizing: border-box;
     max-width: none;
     align-items: center;
+    margin-top: 100px;
   }
   .coin_box p,
   .how_to_buy_title p,
