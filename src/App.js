@@ -32,6 +32,7 @@ import blur_img from './assets/images/blur_img.png'
 import blur_img2 from './assets/images/blur_2.png'
 import circle_3 from './assets/images/circle_3.png'
 import ico_arrow_up from './assets/images/ico-arrow-up.svg'
+import SimpleSlider from "./component/SimpleSlider";
 
 
 
@@ -300,8 +301,9 @@ function App() {
               <a href='#' className='special_btn'>Buy BONE</a>
             </div>
           </div>
-          <div className="cartoon" ></div>
-          {/* <div className="wrapper">
+          <div className="cartoon" >
+            <img className="cartoon-img" src={cartoon} alt="" />
+            <div className="wrapper">
             
             <div className="inner">
               <img src={circle_1} className="circle_1" />
@@ -311,10 +313,12 @@ function App() {
               <img src={blur_img2} className="blur_2" />
               <img src={blur_img3} className="blur_3" />
             </div>
-          </div> */}
+          </div>
+          </div>
+         
         </div>
 
-        <div className=' quick_start'>
+        <div className='quick_start'>
           <h1>
             Quick Start Guide
           </h1>
@@ -413,13 +417,14 @@ function App() {
             <h1>Art</h1>
             <p>We are proud to support ingenuity in all its forms with the <span>Shiba Inu Incubator</span>. The ShibArmy is made up of talented individuals who have united to build something remarkable, and we support this by cultivating an environment which encourages creativity and growth. Through the power of the Shiba Inu Incubator, we help holders find the tools they need to bring their inspiration and unique perspectives to life. This as just another way to encourage others to step outside of preconceived limits and regulations and experience what it means to be part of our decentralized movement.</p>
           </div>
-          {/* <div className='art_slide'>
-             <div className='art_img1'></div>
+          <div className='art_slide'>
+            <SimpleSlider />
+             {/* <div className='art_img1'></div>
              <div className='art_img2'></div>
              <div className='art_img3'></div>
              <div className='art_img4'></div>
-             <div className='art_img5'></div>
-          </div> */}
+             <div className='art_img5'></div> */}
+          </div>
         </div>
         <div className='rescue_section'>
           <div className='rescue_text'>
